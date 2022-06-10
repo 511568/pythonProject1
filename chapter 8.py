@@ -60,8 +60,10 @@ print(city)
 #练习8-7
 def make_album(singer,albumname):
     """创建歌手名和专辑名的字典"""
-    albumdict = {'singer':singer,
+    album = {'singer':singer,
                  'albumname':albumname,
              }
-    print(albumdict)
+    print(album)
 make_album('singer1','album1')
+make_album('singer2','album2')
+make_album('singer3','album3')
