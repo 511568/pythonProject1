@@ -155,5 +155,17 @@ print("\nFinal lists: ")
 print(messages_list)
 print(sent_messages)
 
+#8-13
+def build_profile(lastname,firstname,**userinfo):
+    userinfo['名'] = lastname
+    userinfo['姓'] = firstname
+    return userinfo
+
+abinbinprofile = build_profile('斌斌','郑',
+                               '身高' = '180',
+                               '性别' = '男',
+                               '年龄' = '33',
+                               )
+print(abinbinprofile)
 
 
