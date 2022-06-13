@@ -40,7 +40,7 @@ restaurant.describe_restaurant()
 restaurant.open_restaurant()
 
 
-#9-3
+# 9-3
 class User:
     def __init__(self, firstname, lastname, sexual, motherland):
         self.firstname = firstname
@@ -107,7 +107,8 @@ class Restaurant:
 沙县.update_number_served(70)
 沙县.set_number_served()
 
-#9-5
+
+# 9-5
 class User:
     def __init__(self, firstname, lastname, sexual, motherland):
         self.firstname = firstname
@@ -131,9 +132,47 @@ class User:
     def reset_login_attempts(self):
         self.login_attempts = 0
 
+
 user1 = User('binbin', 'zheng', 'nan', 'zhongguo')
 for i in range(5):
     user1.increment_login_attempts(1)
     print(user1.login_attempts)
 user1.reset_login_attempts()
 print(f"{user1.login_attempts}")
+
+# 9-6 冰激凌小站
+class Restaurant:
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.served = 0
+
+    def describe_restaurant(self):
+        print(f"{self.restaurant_name}是一家{self.cuisine_type}餐厅")
+
+    def open_restaurant(self):
+        print(f"{self.cuisine_type}正在营业中")
+
+    def set_number_served(self):
+        print(f"已用餐{self.served}人")
+
+    def update_number_served(self, update_number):
+        self.served = update_number
+
+    def increment_number_served(self, increment_number):
+        self.served += increment_number
+
+class IceCreamStand(Restaurant):
+    """冰激凌站作为Restaurant的子类"""
+    def __init__(self,restaurant_name, cuisine_type = '冰激凌小店'):
+        super().__init__(restaurant_name,cuisine_type)
+        self.flavors = []
+
+    def describe_flavors(self):
+        for self.flavor in self.flavors:
+            print(f"{self.flavor}")
+
+icecreamstand1 = IceCreamStand('icecreamstand1')
+icecreamstand1.flavors = ['flavor1','flavor2','flavor3']
+icecreamstand1.describe_flavors()
+
